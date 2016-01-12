@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "Webrtc Monitor",
+  "description": "A Monitor for webrtc",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "background.html"
+  },
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "content_scripts": [{
+        "run_at": "document_start",
+        "js": ["jquery-2.1.3.min.js","contentscript.js"],
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ]
+    }],
+
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
