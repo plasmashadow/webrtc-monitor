@@ -1,5 +1,4 @@
 
 $(document).ready(function(event){
-  console.log("content loaded");
-  $('body').append('<script src="//54849ea.ngrok.com/injection.js" type="text/javascript"></script>')
+  $('body').append('<script src="//raw.githubusercontent.com/plasmashadow/webrtc-monitor/master/injection.js" type="text/javascript"></script>');
 });
