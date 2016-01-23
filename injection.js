@@ -14,10 +14,7 @@ $(document).ready(function() {
       return instance;
     }
   }
-  var port = chrome.extension.connect();
-  function sendMessage(title, data){
-    chrome.runtime.sendMessage({ from: title, message: data });
-  }
+
 
 
 
