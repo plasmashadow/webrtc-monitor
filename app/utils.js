@@ -1,5 +1,5 @@
 var jQuery = $;
-
+//polyfill to jquery event emitter
 (function(jQuery) {
 
   jQuery.eventEmitter = {
@@ -26,14 +26,14 @@ var jQuery = $;
 
 }(jQuery));
 
-function MessageEvent(){
+function MessageEvent() {
   $.extend(MessageListener.prototype, $.eventEmitter);
   this.bindListeners();
 }
 
-MessageEvent.prototype.bindListeners = function(){
+MessageEvent.prototype.bindListeners = function() {
   var self = this;
-  chrome.runtime.onMessage.addListener(function(r, s ,send){
-     self.emit(request.from, request.data);
+  chrome.runtime.onMessage.addListener(function(r, s, send) {
+    self.emit(request.title, request.data);
   });
 }
