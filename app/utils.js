@@ -25,15 +25,3 @@ var jQuery = $;
   };
 
 }(jQuery));
-
-function MessageEvent() {
-  $.extend(MessageListener.prototype, $.eventEmitter);
-  this.bindListeners();
-}
-
-MessageEvent.prototype.bindListeners = function() {
-  var self = this;
-  chrome.runtime.onMessage.addListener(function(r, s, send) {
-    self.emit(request.title, request.data);
-  });
-}
