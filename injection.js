@@ -19,7 +19,7 @@ $(document).ready(function() {
     window.postMessage({
       title: title,
       data: data
-    })
+    },'*')
   }
 
 
