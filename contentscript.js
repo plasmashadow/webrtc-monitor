@@ -12,7 +12,7 @@ $(document).ready(function(event){
 //
 
 window.addEventListener('message', function(event) {
-    console.log('content_script.js got message:', event);
+    console.log('content_script.js got message:', event.data);
     // check event.type and event.data
 });
 

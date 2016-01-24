@@ -90,7 +90,7 @@ $(document).ready(function() {
         'packetsSent': 0,
         'rtt': 0
       }
-    }
+    };
     var videoMapped = items.reduce(function(a, b) {
       return {
         'byteSent': a.video.byteSent + b.video.byteSent,
@@ -107,8 +107,6 @@ $(document).ready(function() {
         'rtt': (a.audio.rtt + b.audio.rtt) / 2
       }
     }, _defaults);
-    console.log(audioMapped),
-      console.log(videoMapped)
     return {
       audio: audioMapped,
       video: videoMapped
@@ -121,12 +119,16 @@ $(document).ready(function() {
     var videobyterate = 0;
     setInterval(function() {
       getAllStats().then(function(items) {
-        console.log(items);
         callback(mergeAll(items));
       }).catch(function(err) {
         throw err;
       });
     }, interval);
   }
+
+  StatEmitter(function(message){
+    if(window._connections.length >=1)
+         sendMessage('stat', message);
+  });
 
 });
