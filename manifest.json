@@ -14,7 +14,8 @@
     "scripts": [
       "app/jquery-2.1.3.min.js",
       "app/background.js",
-      "app/utils.js"
+      "app/utils.js",
+      "app/jquery.flot.js"
     ]
   },
 
