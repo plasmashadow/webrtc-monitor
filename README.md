@@ -3,7 +3,7 @@
 Chrome Extension used to monitor WebRTC traffic. Currently only support
 Video Traffic.
 
-![](https://raw.githubusercontent.com/plasmashadow/webrtc-monitor/master/shreenshot.png)
+![](https://raw.githubusercontent.com/plasmashadow/webrtc-monitor/master/screenshot.png)
 
 ##Instruction
 
