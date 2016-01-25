@@ -25,8 +25,30 @@ function StatReciver(callback){
   });
 }
 
+
 $(document).ready(function(){
+  var bitrate = document.getElementById("bitrate");
+  var datset = [[0,0],[1,0],[2,0],[3,0],[4,0]]
+  var count = 5;
+  var plot = $.plot("#bitrate", [datset], {
+			series: {
+				shadowSize: 0	// Drawing is faster without shadows
+			},
+			yaxis: {
+				min: 0,
+				max: 100
+			},
+			xaxis: {
+				show: false
+			}
+		});
+  plot.draw();
   StatReciver(function(stat){
-    console.log(stat);
+     var videoBitRate  = Math.abs(stat.video.bandWidth)/(1024*8);
+     datset.push([count++, videoBitRate])
+     datset.shift();
+     plot.setData(datset);
+     console.log(datset);
+     plot.draw();
   });
 })
